@@ -115,7 +115,7 @@ this.setState ({
 
 {/* //pass down functionlity to add item */}
         <TodoForm addTask={this.addTask} initialstate={this.state.myList}
-        clearPurchased={this.clearPurchased}/>
+        clearPurchased={this.clearPurchased} />
 
         <ToDoList list={this.state.myList} toggle={this.toggleItem}/>
       </div>
@@ -124,3 +124,5 @@ this.setState ({
 }
 
 export default App;
+
+

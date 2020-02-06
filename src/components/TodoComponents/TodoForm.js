@@ -47,6 +47,8 @@ handleSubmit = e => {
     <input type="text" name="task" placeholder="todo" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/></label>
     <button onClick={this.handleSubmit}> Add to List</button>
 
+    {/* //we now want for those toggled to be removed when we click on clear button */}
+
     <button className="clear" onClick={this.props.clearPurchased}>Clear Completed</button>
           
             </form>

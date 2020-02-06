@@ -1,4 +1,4 @@
-.taskContainer {
+.taskContainer  {
     border: 2px lavenderblush solid;
     background: lavender;
     width: 50%;
@@ -12,6 +12,12 @@
     
 }
 
-/* .taskContainer .completed {
-    text-decoration: line-through;
-} */
+
+ span  {
+    text-decoration: none;
+}
+
+.clear {
+    background: coral;
+}
+

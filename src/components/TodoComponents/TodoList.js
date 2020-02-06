@@ -5,7 +5,6 @@ import ToDo from "./Todo";
 // feel free to change this component.js into TodoList.js
 // receives your Todos array and iterates over the list generating a new `<Todo />` for each element in the array.
 
-//Like Grocery List 
 
 
 const ToDoList = props => {
@@ -16,7 +15,7 @@ const ToDoList = props => {
         <div>
 
 {props.list.map(item => (
-    <ToDo key={item.id} item={item} />
+    <ToDo key={item.id} item={item} toggle={props.toggle} />
 ))}
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import ToDoList from './components/TodoComponents/TodoList';
 
+
 // All of your `handler` functions should live here on `<App />`.
  // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -31,16 +32,47 @@ const list = [
 
 class App extends React.Component {
  
-  //adding state 
+  //adding state of list 
   constructor() {
 
     super();
 
     this.state = {
-      myList: list
+      myList: list, 
+  
     };
 
   }
+
+//when we click on item it will get crossed out
+
+toggleItem = id => {
+
+const newList = this.state.myList.map(item => {
+  if(item.id === id) {
+    return {
+      ...item,
+      completed: !item.completed
+    }
+  } else {
+    return item
+  }
+})
+
+this.setState ({
+  myList: newList
+});
+
+
+}
+
+
+
+
+
+
+
+
 
   //adding a new task to our data 
 
@@ -52,12 +84,15 @@ class App extends React.Component {
 
     }
 
-    this.setState({
+    this.setState ({
       myList: [...this.state.myList, newTask]
 
 
     });
   }
+
+
+
 
 
 
@@ -68,9 +103,9 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
 
 {/* //pass down functionlity to add item */}
-        <TodoForm addTask={this.addTask}/>
+        <TodoForm addTask={this.addTask} initialstate={this.state.myList}/>
 
-        <ToDoList list={this.state.myList}/>
+        <ToDoList list={this.state.myList} toggle={this.toggleItem}/>
       </div>
     );
   }

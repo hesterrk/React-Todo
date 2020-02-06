@@ -8,5 +8,10 @@
     font-family: monospace;
 
 
+
     
+}
+
+p {
+    text-decoration: line-through;
 }

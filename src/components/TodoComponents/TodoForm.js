@@ -5,21 +5,24 @@ import React from 'react';
 
 class ToDoForm extends React.Component {
    
-    constructor() {
+    constructor(props) {
     
-        super();
+        super(props);
 
         this.state = {
-            taskName: ''
+            taskName: ""
         };
     
     }
 
     handleToDoFormChanges = e => {
-        this.setState = ({
+        this.setState({
             taskName: e.target.value
         });
-    }
+        
+    };
+
+
 
 
     //add onSubmit: adding a new task functionality 
@@ -42,11 +45,12 @@ handleSubmit = e => {
     
     {/* //leave onchange on the input and add two onClick events to button with the onchange*/}
     <h1>My ToDO's </h1>
-    <input type="text" name="task" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/>
-    <button> Add to List</button>
+    <label>
+    <input type="text" name="task" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/></label>
+    <button onClick={this.handleSubmit}> Add to List</button>
 
-    {/* <button>Clear Completed</button> */}
-           
+    {/* <button className="clear">Clear Completed</button> */}
+           {/* //add onClick */}
             </form>
         );
     }

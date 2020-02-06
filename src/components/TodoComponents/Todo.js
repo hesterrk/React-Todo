@@ -8,14 +8,13 @@ import './Todo.css';
 
 
 const ToDo = props => {
-
+console.log(props.item);
 
     return (
 
-        <div className="taskContainer">
+        <div onClick={() => props.toggle(props.item.id)} className="taskContainer">
 
-<p>{props.item.task}</p>
-
+        <p>{props.item.task}</p>
 
         </div>
     )

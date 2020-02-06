@@ -1,0 +1,12 @@
+.taskContainer {
+    border: 2px lavenderblush solid;
+    background: lavender;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: monospace;
+
+
+    
+}

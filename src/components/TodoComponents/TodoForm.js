@@ -42,8 +42,8 @@ handleSubmit = e => {
     
     {/* //leave onchange on the input and add two onClick events to button with the onchange*/}
     <h1>My ToDO's </h1>
-    <input type="text" name="task" value={this.state.taskName} onChange={this.handleToDoFormChanges}/>
-    <button>Add to List</button>
+    <input type="text" name="task" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/>
+    <button> Add to List</button>
 
     {/* <button>Clear Completed</button> */}
            

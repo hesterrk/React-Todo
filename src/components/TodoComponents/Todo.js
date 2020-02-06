@@ -12,9 +12,12 @@ console.log(props.item);
 
     return (
 
-        <div onClick={() => props.toggle(props.item.id)} className="taskContainer">
+        //if we double click we initialise the toggle function (completed property gets changed from false-->true)
+        //we now want for those toggled to be removed when we click on clear button
+        <div className="taskContainer" onClick={() => props.toggle(props.item.id)}>
 
-        <p>{props.item.task}</p>
+
+        <p >{props.item.task}</p>
 
         </div>
     )

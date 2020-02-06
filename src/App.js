@@ -44,7 +44,12 @@ class App extends React.Component {
 
   }
 
-//when we click on item it will get crossed out
+
+
+
+
+
+//when we click on item it will get changed from false to true so it will go to complete
 
 toggleItem = id => {
 
@@ -69,11 +74,6 @@ this.setState ({
 
 
 
-
-
-
-
-
   //adding a new task to our data 
 
   addTask = taskName => {
@@ -91,7 +91,18 @@ this.setState ({
     });
   }
 
+  //clearing completed items 
 
+  clearPurchased = (e) => {
+    e.preventDefault();
+      const clearState =  this.state.myList.filter(item => 
+           !item.completed
+        );
+        this.setState({
+          myList: clearState
+        });
+        
+      }
 
 
 
@@ -103,7 +114,8 @@ this.setState ({
         <h2>Welcome to your Todo App!</h2>
 
 {/* //pass down functionlity to add item */}
-        <TodoForm addTask={this.addTask} initialstate={this.state.myList}/>
+        <TodoForm addTask={this.addTask} initialstate={this.state.myList}
+        clearPurchased={this.clearPurchased}/>
 
         <ToDoList list={this.state.myList} toggle={this.toggleItem}/>
       </div>

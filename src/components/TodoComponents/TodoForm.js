@@ -17,13 +17,11 @@ class ToDoForm extends React.Component {
 
     handleToDoFormChanges = e => {
         this.setState({
+            
             taskName: e.target.value
         });
         
     };
-
-
-
 
     //add onSubmit: adding a new task functionality 
 
@@ -41,16 +39,16 @@ handleSubmit = e => {
 
         return (
     
-            <form onSubmit={this.handleSubmit}>
+            <form>
     
     {/* //leave onchange on the input and add two onClick events to button with the onchange*/}
     <h1>My ToDO's </h1>
     <label>
-    <input type="text" name="task" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/></label>
+    <input type="text" name="task" placeholder="todo" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/></label>
     <button onClick={this.handleSubmit}> Add to List</button>
 
-    {/* <button className="clear">Clear Completed</button> */}
-           {/* //add onClick */}
+    <button className="clear" onClick={this.props.clearPurchased}>Clear Completed</button>
+          
             </form>
         );
     }

@@ -12,8 +12,56 @@ margin-bottom: 10px;
 `
 
 
+//1. get data of task from app
+//2. set this data to new state here 
+//3. another property state here inside state to store 
+
 class SearchBar extends React.Component {
 
+
+constructor(props) {
+
+    super(props);
+
+
+    //the filtered result will go in this state
+    this.state = {
+      value: ''
+    }
+}
+
+
+
+
+handleSubmit = e => {
+    e.preventDefault();
+
+}
+
+
+// handleSearchChanges = e => {
+//     this.setState({
+//         filteredTasks: e.target.value
+//     })
+// }
+
+//       filter = () => {
+//         const result = this.state.myList.filter(search => search.task.toLowerCase().includes(this.state.filteredTasks.toLowerCase()))
+    
+//         this.setState({
+//             myList: result
+//         })
+//     };
+
+
+handleSearchChanges = e => {
+
+
+    this.setState({
+        value: e.target.value
+    })
+
+}
 
 
 
@@ -21,7 +69,7 @@ class SearchBar extends React.Component {
 render() {
     return (
 
-        <form>
+        <form onSubmit={this.handleSubmit}>
             <H4>Search bar</H4>
 
 <label>
@@ -29,7 +77,8 @@ render() {
     type="text"
     name="search"
     placeholder="search task..."
-    //value, onChange
+    onChange={this.handleSearchChanges}
+    value={this.state.value}
 
 />
         

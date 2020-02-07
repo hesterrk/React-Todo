@@ -76,8 +76,7 @@ class App extends React.Component {
   }
 
 
-
-
+ 
 
 
 //when we click on item it will get changed from false to true so it will go to complete
@@ -135,6 +134,7 @@ this.setState ({
         
       }
 
+      
 
 
 
@@ -143,10 +143,10 @@ this.setState ({
     return (
       <div>
         <Span>
-        <H2>Hester's To-Do App</H2></Span>
+        <H2>Mei To-Do App</H2></Span>
 
       <Div className="wrapper">
-      <SearchBar/>
+      <SearchBar initialstate={this.state.myList}/>
 {/* //pass down functionlity to add item */}
         <TodoForm addTask={this.addTask} initialstate={this.state.myList}
         clearPurchased={this.clearPurchased} />

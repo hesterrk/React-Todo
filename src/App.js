@@ -1,7 +1,8 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import ToDoList from './components/TodoComponents/TodoList';
-
+import SearchBar from './components/TodoComponents/SearchBar';
+import styled from "styled-components";
 
 // All of your `handler` functions should live here on `<App />`.
  // you will need a place to store your state in this component.
@@ -11,6 +12,36 @@ import ToDoList from './components/TodoComponents/TodoList';
 //  - Once a todo is completed, be sure to demonstrate to the user that the todo is completed by adding a line-through style property if the completed flag is true: to-do.css style 
 //- Add the ability to remove any todos that you have completed. `.filter` will be your best friend here. When a user clicks on the `Clear Completed` button call your handler function that will filter out any todos that have the completed flag toggled to `true`.
 //- The `id` field is a unique `Time Stamp` that will be assigned by `Date.now()`.
+
+
+const Div = styled.div `
+border: 6px lavenderblush dotted;
+width: 50%;
+margin-left: 10px;
+padding-left: 20px;
+
+`
+
+const H2 = styled.h2 `
+font-family: monospace;
+font-size: 2rem;
+color: lavender;
+background: #AA076B;
+width: 50%;
+padding-top: 20px;
+padding-bottom: 20px;
+border-radius: 5px;
+display: flex;
+justify-content: center;
+
+`
+
+const Span = styled.span `
+display: flex;
+justify-content: center;
+margin-bottom: 10px;
+`
+
 
 
 
@@ -111,13 +142,19 @@ this.setState ({
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <Span>
+        <H2>Hester's To-Do App</H2></Span>
 
+      <Div className="wrapper">
+      <SearchBar/>
 {/* //pass down functionlity to add item */}
         <TodoForm addTask={this.addTask} initialstate={this.state.myList}
         clearPurchased={this.clearPurchased} />
 
         <ToDoList list={this.state.myList} toggle={this.toggleItem}/>
+      
+   
+      </Div>
       </div>
     );
   }

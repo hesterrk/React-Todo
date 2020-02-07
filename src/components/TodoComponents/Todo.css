@@ -18,6 +18,8 @@
 }
 
 .clear {
-    background: coral;
+    background: #61045F;
+    color: white;
+    border-radius: 3px;
 }
 

@@ -1,4 +1,15 @@
 import React from 'react';
+import styled from "styled-components";
+
+
+const Input = styled.input `
+border: 2px solid lavender;
+border-radius: 2px;
+margin-bottom: 10px;
+margin-right: 5px;
+`
+
+
 
 // Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
 //Adding new Task (name)
@@ -42,9 +53,9 @@ handleSubmit = e => {
             <form>
     
     {/* //leave onchange on the input and add two onClick events to button with the onchange*/}
-    <h1>My ToDO's </h1>
+    
     <label>
-    <input type="text" name="task" placeholder="todo" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/></label>
+    <Input type="text" name="task" placeholder="todo" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/></label>
     <button onClick={this.handleSubmit}> Add to List</button>
 
     {/* //we now want for those toggled to be removed when we click on clear button */}

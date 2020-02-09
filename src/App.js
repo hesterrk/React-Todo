@@ -146,7 +146,7 @@ this.setState ({
         <H2>Mei To-Do App</H2></Span>
 
       <Div className="wrapper">
-      <SearchBar initialstate={this.state.myList}/>
+      <SearchBar initialstate={this.state.myList} />
 {/* //pass down functionlity to add item */}
         <TodoForm addTask={this.addTask} initialstate={this.state.myList}
         clearPurchased={this.clearPurchased} />

@@ -26,7 +26,9 @@ constructor(props) {
 
     //the filtered result will go in this state
     this.state = {
-      value: ''
+        theItemObject: {
+            searchedTaskName: ""
+        }
     }
 }
 
@@ -39,29 +41,21 @@ handleSubmit = e => {
 }
 
 
-// handleSearchChanges = e => {
-//     this.setState({
-//         filteredTasks: e.target.value
-//     })
-// }
-
-//       filter = () => {
-//         const result = this.state.myList.filter(search => search.task.toLowerCase().includes(this.state.filteredTasks.toLowerCase()))
-    
-//         this.setState({
-//             myList: result
-//         })
-//     };
 
 
 handleSearchChanges = e => {
 
 
     this.setState({
-        value: e.target.value
+        theItemObject: {
+            ...this.state.theItemObject,
+            searchedTaskName: e.target.value
+        }
     })
 
 }
+
+
 
 
 

@@ -16,33 +16,32 @@ margin-right: 5px;
 
 class ToDoForm extends React.Component {
    
-    constructor(props) {
+    // constructor(props) {
     
-        super(props);
+    //     super(props);
 
-        this.state = {
-            taskName: ""
-        };
+    //     this.state = {
+    //         taskName: ""
+    //     };
     
-    }
+    // }
 
-    handleToDoFormChanges = e => {
-        this.setState({
+    // handleToDoFormChanges = e => {
+    //     this.setState({
             
-            taskName: e.target.value
-        });
+    //         taskName: e.target.value
+    //     });
         
-    };
+    // };
 
     //add onSubmit: adding a new task functionality 
 
-handleSubmit = e => {
+// handleSubmit = e => {
 
-    e.preventDefault();
-    this.props.addTask(this.state.taskName)
+//     e.preventDefault();
+//     this.props.addTask(this.state.taskName)
 
-}
-
+// }
 
 
 
@@ -55,8 +54,8 @@ handleSubmit = e => {
     {/* //leave onchange on the input and add two onClick events to button with the onchange*/}
     
     <label>
-    <Input type="text" name="task" placeholder="todo" value={this.state.taskName.task} onChange={this.handleToDoFormChanges}/></label>
-    <button onClick={this.handleSubmit}> Add to List</button>
+    <Input type="text" name="task" placeholder="todo" value={this.props.taskState.task} onChange={this.props.handleToDoFormChanges}/></label>
+    <button onClick={this.props.handleSubmit}> Add to List</button>
 
     {/* //we now want for those toggled to be removed when we click on clear button */}
 

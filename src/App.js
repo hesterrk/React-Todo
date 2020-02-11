@@ -47,12 +47,12 @@ margin-bottom: 10px;
 
 const list = [
   {
-    task: 'Organize Garage',
+    task: 'organize Garage',
     id: 1528817077286,
     completed: false
   },
   {
-    task: 'Bake Cookies',
+    task: 'bake Cookies',
     id: 1528817084358,
     completed: false
   }
@@ -70,10 +70,27 @@ class App extends React.Component {
 
     this.state = {
       myList: list, 
+
+      taskName: ""
   
     };
 
   }
+
+//form functionality
+
+handleToDoFormChanges = e => {
+  this.setState({
+
+      taskName: e.target.value
+  });
+  
+};
+
+
+
+
+
 
 
  
@@ -100,8 +117,6 @@ this.setState ({
 
 
 }
-
-
 
 
   //adding a new task to our data 
@@ -135,6 +150,14 @@ this.setState ({
       }
 
       
+      //form functionality 
+
+      handleSubmit = e => {
+
+        e.preventDefault();
+        this.addTask(this.state.taskName)
+      
+      }
 
 
 
@@ -149,7 +172,12 @@ this.setState ({
       <SearchBar initialstate={this.state.myList} />
 {/* //pass down functionlity to add item */}
         <TodoForm addTask={this.addTask} initialstate={this.state.myList}
-        clearPurchased={this.clearPurchased} />
+        clearPurchased={this.clearPurchased} 
+       
+        taskState={this.state.taskName}
+        handleSubmit={this.handleSubmit}
+        handleToDoFormChanges={this.handleToDoFormChanges}
+        />
 
         <ToDoList list={this.state.myList} toggle={this.toggleItem}/>
       

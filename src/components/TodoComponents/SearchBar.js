@@ -25,6 +25,8 @@ constructor(props) {
 
 
     //the filtered result will go in this state
+    //could put props from app state in here
+    //initialstate: props.initialstate
     this.state = {
         theItemObject: {
             searchedTaskName: ""
@@ -53,8 +55,18 @@ handleSearchChanges = e => {
         }
     })
 
+
 }
 
+//this should be on App, pass down function as props: initialise it and then the valye should be the local state on here
+matchingSeaches = e => {
+    e.preventDefault();
+    this.state.theItemObject.searchedTaskName &&this.props.initialState.filter(item => {
+        return item.searchedTaskName.toLowerCase().includes(this.state.theItemObject.searchedTaskName.toLowerCase())
+
+    });
+
+}
 
 
 

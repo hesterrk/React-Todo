@@ -70,7 +70,6 @@ class App extends React.Component {
 
     this.state = {
       myList: list, 
-
       taskName: ""
   
     };
@@ -87,13 +86,6 @@ handleToDoFormChanges = e => {
   
 };
 
-
-
-
-
-
-
- 
 
 
 //when we click on item it will get changed from false to true so it will go to complete
@@ -153,7 +145,6 @@ this.setState ({
       //form functionality 
 
       handleSubmit = e => {
-
         e.preventDefault();
         this.addTask(this.state.taskName)
       

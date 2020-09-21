@@ -28,9 +28,9 @@ constructor(props) {
     //could put props from app state in here
     //initialstate: props.initialstate
     this.state = {
-        theItemObject: {
+    
             searchedTaskName: ""
-        }
+        
     }
 }
 
@@ -45,28 +45,28 @@ handleSubmit = e => {
 
 
 
+
 handleSearchChanges = e => {
 
 
     this.setState({
-        theItemObject: {
-            ...this.state.theItemObject,
+
             searchedTaskName: e.target.value
-        }
+        
     })
 
 
 }
 
+
+
+
 //this should be on App, pass down function as props: initialise it and then the valye should be the local state on here
-matchingSeaches = e => {
-    e.preventDefault();
-    this.state.theItemObject.searchedTaskName &&this.props.initialState.filter(item => {
-        return item.searchedTaskName.toLowerCase().includes(this.state.theItemObject.searchedTaskName.toLowerCase())
 
-    });
+   
+ 
 
-}
+
 
 
 
@@ -75,6 +75,7 @@ matchingSeaches = e => {
 render() {
     return (
 
+        <div>
         <form onSubmit={this.handleSubmit}>
             <H4>Search bar</H4>
 
@@ -91,7 +92,16 @@ render() {
 </label>
 
         </form>
+
+    {/* <div> */}
+{/* {this.props.initialState.filter(item => { return item.task.toLowerCase().includes(this.state.searchedTaskName.toLowerCase()) */}
+
+{/* })} */}
+{/* </div> */}
+</div>
     )
+
+    
 }
 
 
